@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+//Importing File
+import Header from './Header'
+import Navigation from './Navigation'
+/* import Expenses from './Expenses'
+import Invoices from './Invoices' */
+//Import Router
+import { Outlet } from 'react-router-dom'
 
+// React Router Dom Import
+// import { Link } from 'react-router-dom'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Header />
+      <Navigation />
+      <h1 className='text-center uppercase mb-5'>hello otlet are below here !</h1>
+      <Outlet />
+    </>
+  )
 }
 
-export default App;
+export default App
+
+/* 
+* jadi konsep dari outlet itu sebenernya dia tetap menampilkan komponen diatasnya ketika link tersebut di klik. 
+
+layout
+  |
+outlet
+(komponen A) / (komponen B)
+
+Jadi singkat cerita, outlet itu kaya sesuatu yang di hide ketika belomm di klik
+*/
